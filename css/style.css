@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #faf7f4;
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= PÉTALOS ================= */
+
+.petals::before,
+.petals::after {
+  content: "";
+  position: fixed;
+  top: -10%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 30% 30%, #ffd6e5, #e89bbd);
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(2px);
+  animation: floatPetals 18s linear infinite;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.petals::after {
+  left: 60%;
+  width: 160px;
+  height: 160px;
+  animation-duration: 22s;
+}
+
+@keyframes floatPetals {
+  from {
+    transform: translateY(-20vh) translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(120vh) translateX(80px) rotate(360deg);
+  }
+}
+
+/* ================= INTRO ================= */
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fdecef, #eaf4ff);
+}
+
+.intro-card {
+  position: relative;
+  width: 520px;
+  max-width: 92%;
+  cursor: pointer;
+  transition: transform 1s ease, opacity 0.8s ease;
+}
+
+.intro-card.open {
+  transform: scale(0.85) rotateX(25deg);
+  opacity: 0;
+}
+
+.intro-card img {
+  width: 100%;
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(0,0,0,0.28);
+}
+
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.intro-overlay h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.intro-overlay h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  margin: 10px 0;
+}
+
+.intro-overlay p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.intro-overlay span {
+  font-size: 1rem;
+  opacity: 0.85;
+  animation: pulse 1.6s infinite;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  position: relative;
+  max-width: 1000px;
+  margin: 70px auto 0;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.55));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 45px;
+}
+
+.hero-overlay h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+}
+
+.hero-overlay p {
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
+.hero-overlay span {
+  margin-top: 12px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* ================= TEXTO ================= */
+
+.love-text {
+  max-width: 720px;
+  margin: 100px auto;
+  padding: 0 25px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.7rem;
+  color: #6b4f5c;
+  line-height: 1.8;
+}
+
+.love-text span {
+  display: block;
+  margin-top: 18px;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #d67ca5;
+}
+
+
+/* ================= FOTO ANCHA ================= */
+
+.photo-wide {
+  position: relative;
+  max-width: 780px;
+  margin: 90px auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.photo-wide img {
+  width: 100%;
+  display: block;
+}
+
+.photo-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+  color: white;
+  padding: 35px;
+  text-align: center;
+}
+
+.photo-caption h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+}
+
+.photo-caption p {
+  font-size: 1.3rem;
+}
+/* ================= COUNTDOWN ================= */
+
+.countdown-section {
+  position: relative;
+  max-width: 1000px;
+  margin: 90px auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.countdown-section img {
+  width: 100%;
+  display: block;
+}
+
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.countdown-overlay h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+}
+
+#countdown {
+  font-size: 2.4rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ================= RSVP ================= */
+
+.rsvp-section {
+  position: relative;
+  max-width: 1000px;
+  margin: 90px auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.rsvp-section img {
+  width: 100%;
+  display: block;
+}
+
+.rsvp-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.88);
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.rsvp-overlay h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.rsvp-overlay p {
+  font-size: 1.15rem;
+}
+
+.quote {
+  margin-top: 14px;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* ================= BOTÓN ================= */
+
+.btn {
+  margin-top: 28px;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #e89bbd, #d67ca5);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.28);
+}
+
+/* ================= FINAL ================= */
+
+.final-section {
+  position: relative;
+  max-width: 1000px;
+  margin: 90px auto 120px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.final-section img {
+  width: 100%;
+  display: block;
+}
+
+.final-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.7));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 50px 40px;
+}
+
+
+.final-overlay p {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.final-overlay span {
+  margin-top: 14px;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.final-overlay strong {
+  margin-top: 8px;
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+}
+
+/* ================= ANIMACIONES ================= */
+
+@keyframes pulse {
+  0%,100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 700px) {
+  .intro-card { width: 92%; }
+  .hero-overlay h2 { font-size: 2.2rem; }
+  .photo-caption h3 { font-size: 1.6rem; }
+  .countdown-overlay h3 { font-size: 1.8rem; }
+  #countdown { font-size: 1.9rem; }
+}
+/* ================= ÁLBUM DE FOTOS ================= */
+
+.album-section {
+  padding: 90px 20px 120px;
+  display: flex;
+  justify-content: center;
+  background: #faf7f4;
+}
+
+.album-card {
+  max-width: 760px;
+  width: 100%;
+  background: white;
+  border-radius: 28px;
+  padding: 50px 40px 55px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.album-img {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 22px;
+  margin-bottom: 35px;
+}
+
+.album-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.album-card p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.hashtag {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #d67ca5;
+  letter-spacing: 1px;
+}
+
+.album-btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 16px 38px;
+  background: linear-gradient(135deg, #e89bbd, #d67ca5);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+  transition: 0.3s ease;
+}
+
+.album-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.28);
+}
+/* ================= FINAL LIMPIO ================= */
+
+.final-section {
+  max-width: 1000px;
+  margin: 100px auto 120px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.final-text-top {
+  margin-bottom: 35px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #6b4f5c;
+  line-height: 1.8;
+}
+
+.final-section img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
